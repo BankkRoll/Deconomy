@@ -1,0 +1,7 @@
+{
+  "token": "xxxxxxxxxxxxxxxxxxxxxx",                                    // bot token
+  "giphyApiKey": "xxxxxxxxxxxxxxx",                                     // giphy API key
+  "color": "#FF0000",                                                   // embed color
+  "footerText": "Devloped By: Bankkroll",                               // embed footer text
+  "footerIcon": "https://i.ibb.co/8N41nV7/imageedit-4-5545101709.png"   // embed footer icon
+}
