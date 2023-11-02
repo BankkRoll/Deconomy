@@ -64,9 +64,23 @@ const shopItems = new Enmap({
   ensureProps: true,
 });
 
+/**
+ * @type {import("enmap").default}
+ * Streamers that are tracked in each guild.
+ * Includes the streamer's name, platform, and the channel to send notifications to.
+ */
+const streamerData = new Enmap({
+  name: "streamerData",
+  autoEnsure: {
+    streamers: [], // Array of objects { name: 'streamerName', platform: 'Twitch', channel: 'channelId' }
+  },
+  ensureProps: true,
+});
+
 module.exports = {
   guildSettings,
   economyData,
   userInventory,
   shopItems,
+  streamerData,
 };

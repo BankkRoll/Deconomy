@@ -6,20 +6,28 @@
 
 This Discord bot is built using the Sapphire Framework and is designed to provide a range of functionalities including administration tasks, an economy system, and some fun interactive features. The bot is structured to adhere to best coding practices, ensuring it is functionally robust, maintainable, and scalable.
 
+>[!IMPORTANT]
+> **Disclaimer:**
+> Please note that the APIs used in this bot are not owned or maintained by us. The usage of these APIs is at your own risk, and we make no guarantees regarding the availability, accuracy, or functionality of these services. If you are the endpoint owner and would like to remove them please open a issue and ill handle it accordingly. 
+
+
 ## Installation Instructions
 
 1. **Clone the Repository**:
+
    ```sh
    git clone https://github.com/BankkRoll/Deconomy.git
    cd Deconomy
    ```
 
 2. **Install Dependencies**:
+
    ```sh
    npm install
    ```
 
 3. **Configure Settings**:
+
    - Rename `config.json.example` to `config.json`.
    - Edit `config.json` to add your bot token, prefix, and other settings.
 
@@ -62,13 +70,18 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 
 ### Fun Commands
 
-1. `gifSearch`: Searches for a GIF based on a keyword.
-2. `gifText`: Converts text to a GIF.
+1. `gifsearch`: Searches for a GIF based on a keyword.
+2. `giftext`: Converts text to a GIF.
+
+### Streamer Commands
+
+1. `addstreamer`: Adds a streamer to the streamer list.
+2. `liststreamers`: Lists all streamers in the list.
+3. `removestreamer`: Removes a streamer from the streamer list.
 
 ### Utility Commands
 
 1. `help`: Provides information on how to use the bot and its commands.
-
 
 ```sql
 ├── .sapphirerc.json              # Configuration for the Sapphire Framework
@@ -100,6 +113,10 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 │  │  ├── fun
 │  │  │  ├── gifSearch.js         # Command to search for a GIF based on a keyword
 │  │  │  └── gifText.js           # Command to convert text to a GIF
+│  │  ├── social
+│  │  │  ├── addstreamer.js       # Command to add a streamer to the streamer list
+│  │  │  ├── liststreamers.js     # Command to list streamers from the streamer list
+│  │  │  └── removestreamer.js    # Command to remove a streamer from the streamer list
 │  │  └── util
 │  │     └── help.js              # Command to display help information
 │  ├── index.js                   # Entry point of the bot
@@ -112,5 +129,11 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 │  └── utils
 │     ├── confirm.js              # Utility for confirmation dialogs
 │     ├── embed.js                # Utility for creating embeds
-│     └── giphy.js                # Utility for interacting with the Giphy API
+│     ├── giphy.js                # Utility for interacting with the Giphy API
+│     └── streamAlerts.js         # Utility for interacting with the stream alerts
 ```
+
+## License
+
+This project is licensed under the MIT License. For more details, see the [LICENSE](./LICENSE) file in the repository.
+

@@ -2,6 +2,7 @@
 require("sapphire-plugin-modal-commands/register");
 const { SapphireClient } = require("@sapphire/framework");
 const config = require("../config.json");
+const streamAlerts = require("./utils/streamAlerts");
 
 const activities = [
   { text: "in {servers} servers to building", type: "LISTENING" },
@@ -15,6 +16,7 @@ const client = new SapphireClient({
 
 client.once("ready", () => {
   console.log("Bot is online!");
+  streamAlerts.init(client);
 
   let activityIndex = 0;
 
