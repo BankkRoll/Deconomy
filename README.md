@@ -1,5 +1,7 @@
 # Economy Discord Bot
 
+![imageedit_4_5545101709](https://github.com/BankkRoll/Deconomy/assets/106103625/9fc23ad3-71bc-44e9-b888-6c9ed6a4ab98)
+
 ## Overview
 
 This Discord bot is built using the Sapphire Framework and is designed to provide a range of functionalities including administration tasks, an economy system, and some fun interactive features. The bot is structured to adhere to best coding practices, ensuring it is functionally robust, maintainable, and scalable.
