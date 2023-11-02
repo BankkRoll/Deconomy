@@ -22,7 +22,7 @@ module.exports = class ListCommand extends Command {
     await interaction.deferReply({ ephemeral: true });
 
     const guildId = interaction.guild.id;
-    const streamers = streamerData.ensure(guildId, { streamers: [] }).streamers;
+    const streamers = streamerData.get(guildId, "streamers", []);
 
     if (streamers.length === 0) {
       const embed = createEmbed({

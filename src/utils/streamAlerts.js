@@ -15,7 +15,13 @@ async function checkStreamers(client) {
   if (client.guilds.cache.size === 0) return;
 
   for (const [guildId, guild] of client.guilds.cache) {
-    const streamers = streamerData.ensure(guildId, { streamers: [] }).streamers;
+    // Use get instead of ensure
+    let streamers = streamerData.get(guildId, "streamers");
+
+    // Check if streamers is undefined and assign default value if needed
+    if (!streamers) {
+      streamers = [];
+    }
 
     for (const streamer of streamers) {
       const isLive = await checkIfLive(streamer);

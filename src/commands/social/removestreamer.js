@@ -39,9 +39,7 @@ module.exports = class RemoveStreamerCommand extends Command {
     const guildId = interaction.guild.id;
     const name = interaction.options.getString("name");
 
-    const streamerList = streamerData.ensure(guildId, {
-      streamers: [],
-    }).streamers;
+    const streamerList = streamerData.get(guildId, "streamers", []);
     const updatedStreamers = streamerList.filter(
       (streamer) => streamer.name.toLowerCase() !== name.toLowerCase()
     );

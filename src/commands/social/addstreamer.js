@@ -75,9 +75,9 @@ module.exports = class AddStreamerCommand extends Command {
       return interaction.followUp({ embeds: [embed] });
     }
 
-    const streamers = streamerData.ensure(guildId, { streamers: [] }).streamers;
+    const streamers = streamerData.get(guildId, "streamers", []);
     streamers.push({ name, platform, channel, userId });
-    streamerData.set(guildId, { streamers });
+    streamerData.set(guildId, streamers, "streamers");
 
     const embed = createEmbed({
       description: `Successfully added ${name} on ${platform} to the tracking list.`,
