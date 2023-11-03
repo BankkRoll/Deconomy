@@ -13,6 +13,7 @@ const guildSettings = new Enmap({
     adminChannel: null,
     modRoles: [],
     economyEnabled: true,
+    bardCookie: null,
   },
   ensureProps: true,
 });

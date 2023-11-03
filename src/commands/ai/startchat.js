@@ -1,7 +1,7 @@
 // src/commands/ai/startchat.js
 const { Command } = require("@sapphire/framework");
 const Bard = require("../../utils/bard.js");
-const config = require("../../../config.json");
+const { guildSettings } = require("../../../db");
 const { createEmbed } = require("../../utils/embed");
 
 module.exports = class StartChatCommand extends Command {
@@ -60,7 +60,11 @@ module.exports = class StartChatCommand extends Command {
 
       await channel.send({ embeds: [embed] });
 
-      const bard = new Bard(config.BARD_TOKEN, { verbose: true });
+      const guildId = interaction.guild.id;
+      const settings = guildSettings.ensure(guildId, {});
+      const bardToken = settings.bardCookie;
+
+      const bard = new Bard(bardToken, { verbose: true });
       const chat = bard.createChat();
 
       const filter = (m) => m.author.id === interaction.user.id;

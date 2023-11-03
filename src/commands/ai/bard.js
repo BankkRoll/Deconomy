@@ -1,7 +1,7 @@
 // src/commands/ai/bard.js
 const { Command } = require("@sapphire/framework");
 const Bard = require("../../utils/bard.js");
-const config = require("../../../config.json");
+const { guildSettings } = require("../../../db");
 const { createEmbed } = require("../../utils/embed");
 
 module.exports = class BardCommand extends Command {
@@ -24,28 +24,22 @@ module.exports = class BardCommand extends Command {
             .setDescription("Question to ask Bard")
             .setRequired(true)
         )
-        .addStringOption((option) =>
-          option.setName("image").setDescription("Path to an image to send")
-        )
     );
   }
 
   async chatInputRun(interaction) {
     const question = interaction.options.getString("question");
-    const imagePath = interaction.options.getString("image");
 
     await interaction.deferReply({ ephemeral: true });
 
     try {
-      let bard = new Bard(config.BARD_TOKEN, { verbose: true });
-      let askConfig = {};
+      const guildId = interaction.guild.id;
+      const settings = guildSettings.ensure(guildId, {});
+      const bardToken = settings.bardCookie;
 
-      if (imagePath) {
-        const fs = require("fs");
-        askConfig.image = fs.readFileSync(imagePath).buffer;
-      }
+      let bard = new Bard(bardToken, { verbose: true });
+      const response = await bard.ask(question);
 
-      const response = await bard.ask(question, askConfig);
       const embed = createEmbed({
         title: "Bard's Response",
         description: response,

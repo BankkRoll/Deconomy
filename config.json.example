@@ -1,6 +1,5 @@
 {
   "token": "xxxxxxxxxxxxxxxxxxxxxx",                                    // bot token
-  "BARD_TOKEN": "xxxxxxxxxxxxxxx"                                       // bard token
   "giphyApiKey": "xxxxxxxxxxxxxxx",                                     // giphy API key
   "color": "#FF0000",                                                   // embed color
   "footerText": "Developed By: Bankkroll",                               // embed footer text

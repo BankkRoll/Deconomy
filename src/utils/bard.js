@@ -49,10 +49,8 @@ class Bard {
       this.#verbose && console.log("✅ Initialization finished\n");
       return SNlM0e;
     } catch (e) {
-      throw new Error(
-        "Could not fetch Google Bard. Ensure your internet connection and the correctness of the Cookie: " +
-          e
-      );
+      console.error("Could not fetch Google Bard. Ensure your internet connection and the correctness of the Cookie:", e);
+      return null;
     }
   }
 
@@ -122,7 +120,8 @@ class Bard {
     this.#verbose && console.log("🔎 Starting Bard Query");
 
     if (!this.#SNlM0e) {
-      throw new Error("Please initialize Bard first.");
+      console.error("Error: Bard not initialized");
+      return { content: "Error: Bard not initialized", images: [], ids: {} };
     }
 
     this.#verbose && console.log("🏗️ Building Request");

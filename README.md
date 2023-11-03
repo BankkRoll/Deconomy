@@ -72,6 +72,7 @@
 
 1. `bard`: Sends a question to Google Bard and returns the response.
 2. `startchat`: Starts a chat session with Google Bard.
+3. `updatecookie`: Sets the cookie to the new value from `__Secure-1PSID`
 
 ### Economy Commands
 
@@ -119,7 +120,8 @@
 │  │  │  └── setup.js             # Command for initial bot setup
 │  │  ├── ai
 │  │  │  ├── bard.js              # Command to ask bard AI a question
-│  │  │  └── startchat.js         # Command to start a live chat with bard AI
+│  │  │  ├── startchat.js         # Command to start a live chat with bard AI
+│  │  │  └── updatecookie.js      # Command to update the cookie with the new cookie
 │  │  ├── economy
 │  │  │  ├── balance.js           # Command to check a user's coin balance
 │  │  │  ├── buy.js               # Command to buy an item from the shop
