@@ -20,11 +20,9 @@
     "@sapphire/framework": "^3.1.0",
     "@sapphire/ratelimits": "^2.4.4",
     "@sapphire/time-utilities": "^1.7.6",
-    "axios": "^1.6.0",
     "discord.js": "^13.16.0",
     "enmap": "^5.9.1",
     "express": "^4.17.1",
-    "hercai": "^11.0.0",
     "moment": "^2.29.4",
     "sapphire-plugin-modal-commands": "^1.0.9"
   },

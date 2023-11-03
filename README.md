@@ -4,12 +4,15 @@
 
 ## Overview
 
-This Discord bot is built using the Sapphire Framework and is designed to provide a range of functionalities including administration tasks, an economy system, and some fun interactive features. The bot is structured to adhere to best coding practices, ensuring it is functionally robust, maintainable, and scalable.
+**Deconomy** is a feature-rich Discord bot designed to enhance user engagement in your server by introducing an economy system, fun interactions, and administrative utilities. Built with the Sapphire Framework, it offers a seamless and enjoyable experience.
 
->[!IMPORTANT]
-> **Disclaimer:**
-> Please note that the APIs used in this bot are not owned or maintained by us. The usage of these APIs is at your own risk, and we make no guarantees regarding the availability, accuracy, or functionality of these services. If you are the endpoint owner and would like to remove them please open a issue and ill handle it accordingly. 
+- **Economy System**: Virtual currency, shop, inventory, and more.
+- **Fun Commands**: GIF searches, AI chats, and interactive experiences.
+- **Admin Utilities**: Server management made easy.
+- **AI Integration**: Chat with Google Bard AI.
 
+> [!IMPORTANT] > **Disclaimer:**
+> Please note that the APIs used in this bot are not owned or maintained by us. The usage of these APIs is at your own risk, and we make no guarantees regarding the availability, accuracy, or functionality of these services. If you are the endpoint owner and would like to remove them please open a issue and ill handle it accordingly.
 
 ## Installation Instructions
 
@@ -30,6 +33,14 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 
    - Rename `config.json.example` to `config.json`.
    - Edit `config.json` to add your bot token, prefix, and other settings.
+
+   You need to obtain the cookie session value. Here's how you can get it:
+
+   1. Visit [https://bard.google.com/](https://bard.google.com/).
+   2. Open the browser console by pressing F12.
+   3. Go to the "Application" tab.
+   4. Under "Cookies", find the cookie named `__Secure-1PSID` or `__Secure-3PSID`.
+   5. Copy the value of the cookie, which will be your session value. Use as `BARD_TOKEN` in config.
 
 4. **Start the Bot**:
    ```sh
@@ -56,6 +67,11 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 7. `setcoins`: Sets the users coins to the specified amount.
 8. `settings`: Updates server settings.
 9. `setup`: Initial setup of the bot.
+
+### AI Commands
+
+1. `bard`: Sends a question to Google Bard and returns the response.
+2. `startchat`: Starts a chat session with Google Bard.
 
 ### Economy Commands
 
@@ -101,6 +117,9 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 │  │  │  ├── setcoins.js          # Command to set a user's coin balance to a specified amount
 │  │  │  ├── settings.js          # Command to update server settings
 │  │  │  └── setup.js             # Command for initial bot setup
+│  │  ├── ai
+│  │  │  ├── bard.js              # Command to ask bard AI a question
+│  │  │  └── startchat.js         # Command to start a live chat with bard AI
 │  │  ├── economy
 │  │  │  ├── balance.js           # Command to check a user's coin balance
 │  │  │  ├── buy.js               # Command to buy an item from the shop
@@ -127,6 +146,7 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 │  ├── preconditions             # Preconditions for command execution
 │  ├── routes                     # Routes for web server/API
 │  └── utils
+│     ├── bard.js                 # Utility for bard-related events
 │     ├── confirm.js              # Utility for confirmation dialogs
 │     ├── embed.js                # Utility for creating embeds
 │     ├── giphy.js                # Utility for interacting with the Giphy API
@@ -136,4 +156,3 @@ This Discord bot is built using the Sapphire Framework and is designed to provid
 ## License
 
 This project is licensed under the MIT License. For more details, see the [LICENSE](./LICENSE) file in the repository.
-
