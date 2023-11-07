@@ -11,7 +11,8 @@
 - **Admin Utilities**: Server management made easy.
 - **AI Integration**: Chat with Google Bard AI.
 
-> [!IMPORTANT] > **Disclaimer:**
+> [!IMPORTANT] 
+> **Disclaimer:**
 > Please note that the APIs used in this bot are not owned or maintained by us. The usage of these APIs is at your own risk, and we make no guarantees regarding the availability, accuracy, or functionality of these services. If you are the endpoint owner and would like to remove them please open a issue and ill handle it accordingly.
 
 ## Installation Instructions
