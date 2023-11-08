@@ -33,15 +33,8 @@
 3. **Configure Settings**:
 
    - Rename `config.json.example` to `config.json`.
-   - Edit `config.json` to add your bot token, prefix, and other settings.
+   - Edit `config.json` to add your bot token and other settings.
 
-   You need to obtain the cookie session value. Here's how you can get it:
-
-   1. Visit [https://bard.google.com/](https://bard.google.com/).
-   2. Open the browser console by pressing F12.
-   3. Go to the "Application" tab.
-   4. Under "Cookies", find the cookie named `__Secure-1PSID` or `__Secure-3PSID`.
-   5. Copy the value of the cookie, which will be your session value. Use as `BARD_TOKEN` in config.
 
 4. **Start the Bot**:
    ```sh
@@ -68,12 +61,6 @@
 7. `setcoins`: Sets the users coins to the specified amount.
 8. `settings`: Updates server settings.
 9. `setup`: Initial setup of the bot.
-
-### AI Commands
-
-1. `bard`: Sends a question to Google Bard and returns the response.
-2. `startchat`: Starts a chat session with Google Bard.
-3. `updatecookie`: Sets the cookie to the new value from `__Secure-1PSID`
 
 ### Economy Commands
 
@@ -119,10 +106,6 @@
 │  │  │  ├── setcoins.js          # Command to set a user's coin balance to a specified amount
 │  │  │  ├── settings.js          # Command to update server settings
 │  │  │  └── setup.js             # Command for initial bot setup
-│  │  ├── ai
-│  │  │  ├── bard.js              # Command to ask bard AI a question
-│  │  │  ├── startchat.js         # Command to start a live chat with bard AI
-│  │  │  └── updatecookie.js      # Command to update the cookie with the new cookie
 │  │  ├── economy
 │  │  │  ├── balance.js           # Command to check a user's coin balance
 │  │  │  ├── buy.js               # Command to buy an item from the shop
@@ -149,7 +132,6 @@
 │  ├── preconditions             # Preconditions for command execution
 │  ├── routes                     # Routes for web server/API
 │  └── utils
-│     ├── bard.js                 # Utility for bard-related events
 │     ├── confirm.js              # Utility for confirmation dialogs
 │     ├── embed.js                # Utility for creating embeds
 │     ├── giphy.js                # Utility for interacting with the Giphy API
