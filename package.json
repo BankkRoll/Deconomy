@@ -22,7 +22,7 @@
     "@sapphire/time-utilities": "^1.7.6",
     "discord.js": "^13.16.0",
     "enmap": "^5.9.1",
-    "express": "^4.17.1",
+    "express": "^4.22.0",
     "moment": "^2.29.4",
     "sapphire-plugin-modal-commands": "^1.0.9"
   },
